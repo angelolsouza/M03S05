@@ -6,10 +6,10 @@
       <div class="carousel-item active" data-bs-toggle="modal" data-bs-target="#modalAvaliacaoCurso">
         <img src="assets/curso.png" class="d-block w-100" alt="...">
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#modalAvaliacaoCurso">
         <img src="assets/curso.png" class="d-block w-100" alt="...">
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" data-bs-toggle="modal" data-bs-target="#modalAvaliacaoCurso">
         <img src="assets/curso.png" class="d-block w-100" alt="...">
       </div>
     </div>
@@ -33,11 +33,32 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <form>
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="email" class="form-control" id="nome">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="mb-3">
+            <label for="dtNascimento" class="form-label">Data de nascimento</label>
+            <input type="date" class="form-control" id="dtNascimento" [placeholder]="'DD/MM/YYYY'">
+          </div>
+          <div class="mb-3">
+            <label for="feedback" class="form-label">Feedback</label>
+            <textarea class="form-control" id="feedback"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="nota" class="form-label">Nota</label>
+            <input type="number" class="form-control" id="nota" [min]="0" [max]="10">
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Enviar</button>
+        <button type="button" class="btn btn-primary" (click)="enviar()">Enviar</button>
       </div>
     </div>
   </div>
