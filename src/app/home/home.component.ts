@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ModalFormularioComponent } from '../shared/components/modal-formulario/modal-formulario.component';
 
 @Component({
   selector: 'app-home',
@@ -6,9 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  constructor() {}
+  @ViewChild('modalFormulario', {static: true}) modalFormulario: TemplateRef<any> | undefined;
+  modalUploadRef: NgbModalRef | undefined;
 
-  enviar() {
-    window.alert('Envio realizado com sucesso');
+  constructor(private modalService: NgbModal) {}
+
+  openModalFormularioHome() {
+    //abertura de modal passando a referencia do Template
+    //this.modalUploadRef = this.modalService.open(this.modalFormulario);
+
+    //abertura de modal passando a referencia do Componente
+    this.modalUploadRef = this.modalService.open(ModalFormularioComponent);
+  }
+
+  closeModalHome() {
+    this.modalUploadRef?.close();
   }
 }
