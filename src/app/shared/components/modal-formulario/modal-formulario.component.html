@@ -4,26 +4,18 @@
     <button type="button" class="btn-close" (click)="fechar()" aria-label="Close"></button>
   </div>
   <div class="modal-body">
-    <form>
+    <form [formGroup]="usuarioForm">
       <div class="mb-3">
         <label for="nome" class="form-label">Nome</label>
-        <input type="email" class="form-control" id="nome">
+        <input type="email" class="form-control" id="nome" formControlName="nome">
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email">
+        <input type="email" class="form-control" id="email" formControlName="email">
       </div>
       <div class="mb-3">
         <label for="dtNascimento" class="form-label">Data de nascimento</label>
-        <input type="date" class="form-control" id="dtNascimento" [placeholder]="'DD/MM/YYYY'">
-      </div>
-      <div class="mb-3">
-        <label for="feedback" class="form-label">Feedback</label>
-        <textarea class="form-control" id="feedback"></textarea>
-      </div>
-      <div class="mb-3">
-        <label for="nota" class="form-label">Nota</label>
-        <input type="number" class="form-control" id="nota" [min]="0" [max]="10">
+        <input type="date" class="form-control" id="dtNascimento" [placeholder]="'DD/MM/YYYY'" formControlName="dtNascimento">
       </div>
     </form>
   </div>

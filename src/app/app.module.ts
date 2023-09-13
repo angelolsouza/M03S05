@@ -12,9 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
     NgbModule
   ],
