@@ -29,14 +29,14 @@ export class ModalFormularioComponent implements OnInit {
 
   enviar() {
     //url do endpoint a ser chamado
-    const url = '';
+    const url = 'https://localhost:7081/';
 
     //construção do objeto para envio
     //const body = this.usuarioForm.value;
     const body = {
-      nomeUsuario: this.usuarioForm.value.nome,
-      email: this.usuarioForm.value.email,
-      dataNascimento: this.usuarioForm.value.dtNascimento
+      nomeCompleto: this.usuarioForm.value.nome,
+      emailInformado: this.usuarioForm.value.email,
+      dataDeNascimento: this.usuarioForm.value.dtNascimento
     }
     this.http.post(url, body).subscribe(retorno => {
       //rotina
